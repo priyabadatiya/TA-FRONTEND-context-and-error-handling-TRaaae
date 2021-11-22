@@ -1,8 +1,15 @@
-function Header({ isDarkMode }) {
+import myContext from "./myContext";
+
+function Header() {
   return (
-    <h1 className={`heading ${isDarkMode ? "heading-dark" : "heading-light"}`}>
+    <myContext.Consumer>
+      {(isDarkMode)=>(
+        <h1 className={`heading ${isDarkMode ? "heading-dark" : "heading-light"}`}>
       {isDarkMode ? "Dark Mode" : "Light Mode"}
     </h1>
+      )}
+    
+    </myContext.Consumer>
   );
 }
 

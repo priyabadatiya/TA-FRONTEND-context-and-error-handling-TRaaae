@@ -1,6 +1,10 @@
-function Paragraph({ isDarkMode }) {
+import myContext from "./myContext";
+
+function Paragraph() {
   return (
-    <p className={`para ${isDarkMode ? "para-dark" : "para-light"}`}>
+    <myContext.Consumer>
+      {(isDarkMode)=>(
+        <p className={`para ${isDarkMode ? "para-dark" : "para-light"}`}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Sed tempus urna et
       pharetra pharetra massa massa ultricies. Id porta nibh venenatis cras sed
@@ -13,6 +17,8 @@ function Paragraph({ isDarkMode }) {
       pulvinar mattis nunc sed blandit libero volutpat. Amet consectetur
       adipiscing elit pellentesque habitant morbi tristique senectus et.
     </p>
+      )}
+    </myContext.Consumer>
   );
 }
 export default Paragraph;

@@ -1,12 +1,17 @@
-function Title({ text, isDarkMode }) {
+import myContext from "./myContext"
+function Title({ text}) {
   return (
-    <h2
+    <myContext.Consumer>
+      {(isDarkMode)=>(
+        <h2
       className={`heading ${
         isDarkMode ? "sub-heading-dark" : "sub-heading-light"
       }`}
     >
       {text}
     </h2>
+      )}
+    </myContext.Consumer>
   );
 }
 

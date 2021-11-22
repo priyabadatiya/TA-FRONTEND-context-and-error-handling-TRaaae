@@ -1,6 +1,9 @@
-function Card({ isDarkMode }) {
+import myContext from "./myContext";
+function Card() {
   return (
-    <div className="card_item">
+    <myContext.Consumer>
+{ (isDarkMode)=>{
+  <div className="card_item">
       <div className={isDarkMode ? "card_inner_dark" : "card_inner_light"}>
         <div className="card_top">
           <img src="https://i.imgur.com/qhE9KtV.jpg" alt="car" />
@@ -17,6 +20,9 @@ function Card({ isDarkMode }) {
         </div>
       </div>
     </div>
+} }
+    
+    </myContext.Consumer>
   );
 }
 
