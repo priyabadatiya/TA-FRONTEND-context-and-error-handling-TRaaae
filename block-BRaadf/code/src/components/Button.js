@@ -12,7 +12,6 @@ export default function SwitchButton({changeMode }) {
       {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     </button>
       )}
-    
     </myContext.Consumer>
   );
 }
